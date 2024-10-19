@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シンプルなHTMLページ</title>
+  </head>
+  <body>
+    {{> header .}}
+    <main>
+      {{log .}}
+      {{#unless develop}}\{{range .Sections}}{{/unless}}
+      {{#each sections}}
+      <section>
+        <h2>{{this}}</h2>
+      </section>
+      {{/each}}
+      {{#unless develop}}\{{end}}{{/unless}}
+    </main>
+  </body>
+</html>

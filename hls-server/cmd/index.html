@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video Player</title>
+        <!-- <link rel="stylesheet" href="/public/styles.css"> -->
+        <!-- Optional: Add a CSS file for styling -->
+        <script
+            src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+    </head>
+    <body>
+        <h1>Video Player</h1>
+
+        <video id="video" width="640" height="360" controls>
+            <source src="/hls/playlist.m3u8" type="application/x-mpegURL">
+            Your browser does not support the video tag.
+        </video>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Select MP4 file:</label>
+            <fieldset>
+                <input type="file" id="file" name="file" accept="video/mp4"
+                    required>
+            </fieldset>
+            <button type="submit">Upload</button>
+        </form>
+        <script src="/public/script.js"></script>
+    </body>
+</html>
